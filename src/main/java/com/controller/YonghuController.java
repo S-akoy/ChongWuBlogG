@@ -161,7 +161,14 @@ public class YonghuController {
     /**
      * 用户信息查看
      */
-
+    @RequestMapping("/info/{id}")
+    public R info(@PathVariable("id") Long id){
+        YonghuEntity yonghu = yonghuService.selectById(id);
+        Map<String, String> deSens = new HashMap<>();
+        //给需要脱敏的字段脱敏
+        DeSensUtil.desensitize(yonghu,deSens);
+        return R.ok().put("data", yonghu);
+    }
 
     /**
      * 前台详情
@@ -262,6 +269,33 @@ public class YonghuController {
      * 用户信息修改
      */
 
+    @RequestMapping("/update")
+    @Transactional
+    @IgnoreAuth
+    public R update(@RequestBody YonghuEntity yonghu, HttpServletRequest request){
+//ValidatorUtils.validateEntity(yonghu);
+//验证字段唯⼀性，否则返回错误信息
+        if(yonghuService.selectCount(new EntityWrapper<YonghuEntity>().ne("id", yonghu.getId()).eq("yonghuming", yonghu.getYonghuming()))>0) {
+            return R.error("⽤户名已存在");
+        }
+        YonghuEntity yonghuEntity = yonghuService.selectById(yonghu.getId());
+//如果密码不为空，则判断是否和输⼊密码⼀致，不⼀致则重新设置
+        if(StringUtils.isNotBlank(yonghu.getMima()) && !yonghu.getMima().equals(yonghuEntity.getMima())) {
+            //密码使⽤md5⽅式加密
+            yonghu.setMima(EncryptUtil.md5(yonghu.getMima()));
+        }
+//全部更新
+        yonghuService.updateById(yonghu);
+        if(null!=yonghu.getYonghuming())
+        {
+            // 修改token
+            TokenEntity tokenEntity = new TokenEntity();
+            tokenEntity.setUsername(yonghu.getYonghuming());
+            tokenService.update(tokenEntity, new EntityWrapper<TokenEntity>().eq(
+                    "userid", yonghu.getId()));
+        }
+        return R.ok();
+    }
 
     
 
@@ -269,8 +303,11 @@ public class YonghuController {
      * 用户信息删除
      */
 
-    
-
+    @RequestMapping("/delete")
+    public R delete(@RequestBody Long[] ids){
+        yonghuService.deleteBatchIds(Arrays.asList(ids));
+        return R.ok();
+    }
 
 
 
