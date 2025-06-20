@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1236116-454c-46e1-be7a-e0071da09993" name="默认变更列表" comment="generateToken方法补全">
-      <change afterPath="$PROJECT_DIR$/src/main/java/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/springboot8v545ay0__1__war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/springboot8v545ay0__1__war.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot8v545ay0 (1).iml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot8v545ay0 (1).iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/YonghuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/YonghuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/StoreupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/StoreupController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,6 +246,7 @@
       <workItem from="1750320320567" duration="1841000" />
       <workItem from="1750334128903" duration="611000" />
       <workItem from="1750383694812" duration="182000" />
+      <workItem from="1750384112726" duration="302000" />
     </task>
     <task id="LOCAL-00001" summary="generateToken方法补全">
       <created>1750320803042</created>
