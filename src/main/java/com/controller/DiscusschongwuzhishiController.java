@@ -149,10 +149,16 @@ public class DiscusschongwuzhishiController {
      * 文章评论
      */
 
+    @RequestMapping("/add")
+    public R add(@RequestBody DiscusschongwuzhishiEntity discusschongwuzhishi, HttpServletRequest request){
+        //ValidatorUtils.validateEntity(discusschongwuzhishi);
+        discusschongwuzhishiService.insert(discusschongwuzhishi);
+        return R.ok().put("data",discusschongwuzhishi.getId());
+    }
 
 
 
-     /**
+    /**
      * 获取用户密保
      */
     @RequestMapping("/security")
@@ -167,8 +173,17 @@ public class DiscusschongwuzhishiController {
      * 文章评论更新
      */
 
+    @RequestMapping("/update")
+    @Transactional
+    @IgnoreAuth
+    public R update(@RequestBody DiscusschongwuzhishiEntity discusschongwuzhishi, HttpServletRequest request){
+    //ValidatorUtils.validateEntity(discusschongwuzhishi);
+    //全部更新
+        discusschongwuzhishiService.updateById(discusschongwuzhishi);
+        return R.ok();
+    }
 
-    
+
 
     /**
      * 删除

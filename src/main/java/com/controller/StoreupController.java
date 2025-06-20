@@ -156,7 +156,7 @@ public class StoreupController {
     @RequestMapping("/add")
     public R add(@RequestBody StoreupEntity storeup, HttpServletRequest request
     ){
-//ValidatorUtils.validateEntity(storeup);
+    //ValidatorUtils.validateEntity(storeup);
         storeupService.insert(storeup);
         return R.ok().put("data",storeup.getId());
     }

@@ -138,7 +138,17 @@ public class ZhishifenleiController {
     /**
      * 知识分类添加
      */
-
+    @RequestMapping("/save")
+    public R save(@RequestBody ZhishifenleiEntity zhishifenlei, HttpServletRequest request){
+//验证字段唯⼀性，否则返回错误信息
+        if(zhishifenleiService.selectCount(new EntityWrapper<ZhishifenleiEntity>()
+                .eq("zhishifenlei", zhishifenlei.getZhishifenlei()))>0) {
+            return R.error("知识分类已存在");
+        }
+//ValidatorUtils.validateEntity(zhishifenlei);
+        zhishifenleiService.insert(zhishifenlei);
+        return R.ok().put("data",zhishifenlei.getId());
+    }
     
     /**
      * 前台保存
@@ -162,6 +172,18 @@ public class ZhishifenleiController {
      * 知识分类修改
      */
 
+    @RequestMapping("/update")
+    @Transactional
+    public R update(@RequestBody ZhishifenleiEntity zhishifenlei, HttpServletRequest request){
+//ValidatorUtils.validateEntity(zhishifenlei);
+//验证字段唯⼀性，否则返回错误信息
+        if(zhishifenleiService.selectCount(new EntityWrapper<ZhishifenleiEntity>().ne("id", zhishifenlei.getId()).eq("zhishifenlei", zhishifenlei.getZhishifenlei()))>0) {
+            return R.error("知识分类已存在");
+        }
+//全部更新
+        zhishifenleiService.updateById(zhishifenlei);
+        return R.ok();
+    }
 
 
 
@@ -171,7 +193,11 @@ public class ZhishifenleiController {
      * 知识分类删除
      */
 
-    
+    @RequestMapping("/delete")
+    public R delete(@RequestBody Long[] ids){
+        zhishifenleiService.deleteBatchIds(Arrays.asList(ids));
+        return R.ok();
+    }
 
 
 

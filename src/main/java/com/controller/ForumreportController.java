@@ -176,6 +176,15 @@ public class ForumreportController {
     /**
      * 举报违规处理
      */
+    @RequestMapping("/update")
+    @Transactional
+    @IgnoreAuth
+    public R update(@RequestBody ForumreportEntity forumreport, HttpServletRequest request){
+    //ValidatorUtils.validateEntity(forumreport);
+    //全部更新
+        forumreportService.updateById(forumreport);
+        return R.ok();
+    }
 
 
 

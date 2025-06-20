@@ -183,6 +183,13 @@ public class ForumController {
      * 在线交流发布回复
      */
 
+    @RequestMapping("/add")
+    public R add(@RequestBody ForumEntity forum, HttpServletRequest request){
+    //ValidatorUtils.validateEntity(forum);
+        forum.setUserid((Long)request.getSession().getAttribute("userId"));
+        forumService.insert(forum);
+        return R.ok().put("data",forum.getId());
+    }
 
 
 

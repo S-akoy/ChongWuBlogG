@@ -196,6 +196,14 @@ public class ChongwuzhishiController {
     /**
      * 宠物知识修改
      */
+    @RequestMapping("/update")
+    @Transactional
+    public R update(@RequestBody ChongwuzhishiEntity chongwuzhishi, HttpServletRequest request){
+    //ValidatorUtils.validateEntity(chongwuzhishi);
+    //全部更新
+        chongwuzhishiService.updateById(chongwuzhishi);
+        return R.ok();
+    }
 
 
 
@@ -206,8 +214,13 @@ public class ChongwuzhishiController {
      * 宠物知识删除
      */
 
-    
-	/**
+    @RequestMapping("/delete")
+    public R delete(@RequestBody Long[] ids){
+        chongwuzhishiService.deleteBatchIds(Arrays.asList(ids));
+        return R.ok();
+    }
+
+    /**
      * 前台智能排序
      */
 	@IgnoreAuth

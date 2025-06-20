@@ -55,6 +55,26 @@ public class YonghuController {
 	/**
 	 * 用户登录
 	 */
+    @IgnoreAuth
+    @RequestMapping(value = "/login")
+    public R login(String username, String password, String captcha, HttpServletRequest request) {
+// 根据登录查询⽤户信息
+        YonghuEntity u = yonghuService.selectOne(new EntityWrapper<YonghuEntity>().eq("yonghuming", username));
+        // 判断⽤户锁定状态
+        if(u!=null && u.getStatus().intValue()==1) {
+            //返回已锁定提示
+            return R.error("账号已锁定，请联系管理员。");
+        }
+        // 当⽤户不存在或md5⽅式验证密码不通过时
+        if(u==null || !u.getMima().equals(EncryptUtil.md5(password))) {
+            //账号或密码不正确提示
+            return R.error("账号或密码不正确");
+        }
+        // 获取登录token
+        String token = tokenService.generateToken(u.getId(), username,"yon ghu", "⽤户" );
+                //返回token
+        return R.ok().put("token", token);
+    }
 
 
 
@@ -63,11 +83,37 @@ public class YonghuController {
      * 注册
      */
 
+    @IgnoreAuth
+    @RequestMapping("/register")
+    public R register(@RequestBody YonghuEntity yonghu){
+        //ValidatorUtils.validateEntity(yonghu);
+        //根据登录账号获取⽤户信息判断是否存在该⽤户，否则返回错误信息
+        YonghuEntity u = yonghuService.selectOne(new EntityWrapper<YonghuEntity>().eq("yonghuming", yonghu.getYonghuming()));
+        if(u!=null) {
+            return R.error("注册⽤户已存在");
+        }
+        //判断是否存在相同⽤户名，否则返回错误信息
+        if(yonghuService.selectCount(new EntityWrapper<YonghuEntity>().eq("yonghuming", yonghu.getYonghuming()))>0) {
+            return R.error("⽤户名已存在");
+        }
+        Long uId = new Date().getTime();
+        yonghu.setId(uId);
+        //设置登录密码md5⽅式加密
+        yonghu.setMima(EncryptUtil.md5(yonghu.getMima()));
+        //保存⽤户
+        yonghuService.insert(yonghu);
+        return R.ok();
+    }
 
 	
 	/**
 	 * 退出
 	 */
+    @RequestMapping("/logout")
+    public R logout(HttpServletRequest request) {
+        request.getSession().invalidate();
+        return R.ok("退出成功");
+    }
 
 	
 	/**

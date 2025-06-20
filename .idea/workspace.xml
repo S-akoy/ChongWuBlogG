@@ -5,8 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1236116-454c-46e1-be7a-e0071da09993" name="默认变更列表" comment="generateToken方法补全">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/springboot8v545ay0__1__war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/springboot8v545ay0__1__war.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/springboot8v545ay0__1__war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/springboot8v545ay0__1__war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot8v545ay0 (1).iml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot8v545ay0 (1).iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/ChongwuzhishiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/ChongwuzhishiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/DiscusschongwuzhishiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/DiscusschongwuzhishiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/ForumController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/ForumController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/ForumreportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/ForumreportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/SensitivewordsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/SensitivewordsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/StoreupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/StoreupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/YonghuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/YonghuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/ZhishifenleiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/ZhishifenleiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/TokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/impl/TokenServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/impl/TokenServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,21 +45,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Sakoy/Documents/Intellij/cchongwu&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;f145e63f83a945db150e5bab51b81c46&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "OverrideImplement.generate.javadoc": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/12038/IdeaProjects/ChongWuBlog",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "spring.configuration.checksum": "f145e63f83a945db150e5bab51b81c46"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Spring Boot.SpringbootSchemaApplication">
     <configuration name="SpringbootSchemaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="ACTIVE_PROFILES" />
@@ -247,6 +261,7 @@
       <workItem from="1750334128903" duration="611000" />
       <workItem from="1750383694812" duration="182000" />
       <workItem from="1750384112726" duration="302000" />
+      <workItem from="1750409335563" duration="899000" />
     </task>
     <task id="LOCAL-00001" summary="generateToken方法补全">
       <created>1750320803042</created>

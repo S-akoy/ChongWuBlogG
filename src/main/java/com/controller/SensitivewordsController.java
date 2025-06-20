@@ -124,7 +124,17 @@ public class SensitivewordsController {
      * 用户信息前台详情
      */
     //给需要脱敏的字段脱敏(字段脱敏方法DeSensUtil.desensitize)
-    
+    @IgnoreAuth
+    @RequestMapping("/detail/{id}")
+    public R detail(@PathVariable("id") Long id){
+        SensitivewordsEntity sensitivewords = sensitivewordsService.selectById(
+                id);
+        Map<String, String> deSens = new HashMap<>();
+        //给需要脱敏的字段脱敏
+        DeSensUtil.desensitize(sensitivewords,deSens);
+        return R.ok().put("data", sensitivewords);
+    }
+
 
 
 

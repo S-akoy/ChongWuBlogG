@@ -9,12 +9,6 @@
     </properties>
     <root id="archive" name="springboot8v545ay0.war">
       <element id="artifact" artifact-name="springboot8v545ay0 (1):war exploded" />
-      <element id="javaee-facet-resources" facet="springboot8v545ay0 (1)/web/Web2" />
-      <element id="directory" name="WEB-INF">
-        <element id="directory" name="classes">
-          <element id="module-output" name="springboot8v545ay0 (1)" />
-        </element>
-      </element>
     </root>
   </artifact>
 </component>

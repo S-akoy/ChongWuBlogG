@@ -100,7 +100,7 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/springboot8v545ay0/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="springboot8v545ay0 (1)/web/Web" />
+      <element id="javaee-facet-resources" facet="springboot8v545ay0 (1)/web/Web2" />
     </root>
   </artifact>
 </component>
